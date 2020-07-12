@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class TimeEntry extends Base {
+public class Delete extends Base {
 
 
 
