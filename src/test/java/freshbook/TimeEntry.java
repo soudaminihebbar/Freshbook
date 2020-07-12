@@ -15,6 +15,7 @@ public class TimeEntry extends Base {
 
 
     final File file = new File("createTimeEntry.json");
+    final File updateFile = new File("updateTimeEntry.json");
 
     @Test
     public void createTimeEntry() {
@@ -54,6 +55,18 @@ public class TimeEntry extends Base {
                 .assertThat()
                 .statusCode(200);
     }
-    
+
+    @Test
+    public void update() {
+        RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .body(updateFile)
+                .put(String.valueOf(id))
+                .then()
+                .assertThat()
+                .statusCode(200);
+    }
+
 }
 
