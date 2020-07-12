@@ -15,27 +15,7 @@ public class TimeEntry extends Base {
 
 
 
-    @Test
-    public void getAllTimeEntry() {
-        RestAssured
-                .given()
-                .get()
-                .then()
-                .assertThat()
-                .statusCode(200)
-                .body("time_entries.id", hasItem(id))
-                .extract();
-    }
 
-    @Test
-    public void getLatest() {
-        RestAssured
-                .given()
-                .get(String.valueOf(id))
-                .then()
-                .assertThat()
-                .statusCode(200);
-    }
 
     @Test
     public void update() {
