@@ -44,5 +44,16 @@ public class TimeEntry extends Base {
                 .body("time_entries.id", hasItem(id))
                 .extract();
     }
+
+    @Test
+    public void getLatest() {
+        RestAssured
+                .given()
+                .get(String.valueOf(id))
+                .then()
+                .assertThat()
+                .statusCode(200);
+    }
+    
 }
 
