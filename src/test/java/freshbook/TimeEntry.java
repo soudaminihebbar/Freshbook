@@ -9,25 +9,21 @@ import java.io.File;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.hasItem;
 
-public class TimeEntry {
-    public int id;
+public class TimeEntry extends Base {
 
-    File file = new File("createTimeEntry.json");
+
+    final File file = new File("createTimeEntry.json");
 
     @Test
     public void createTimeEntry() {
-        RestAssured.baseURI ="https://api.freshbooks.com/timetracking/business/3585241/time_entries";
-        RestAssured.authentication = RestAssured.oauth2("642427e4ceb0bb6bff140abf531d1de9826284cb7b7a4a37cf838e6bf44bb1a5");
-
         ExtractableResponse response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
-                .log().all()
                 .body(file)
                 .post()
                 .then()
-                .log().all()
                 .assertThat()
                 .statusCode(200)
                 .body("time_entry.duration", greaterThan(0))
@@ -35,8 +31,18 @@ public class TimeEntry {
                 .extract();
 
         id = response.jsonPath().get("time_entry.id");
+    }
 
-
+    @Test
+    public void getAllTimeEntry() {
+        RestAssured
+                .given()
+                .get()
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .body("time_entries.id", hasItem(id))
+                .extract();
     }
 }
 
