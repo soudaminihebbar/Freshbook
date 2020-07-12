@@ -5,6 +5,7 @@
         <classes>
             <class name="freshbook.CreateTimeEntry"/>
             <class name="freshbook.GetTimeEntry"/>
+            <class name="freshbook.Update"/>
         </classes>
     </test>
 </suite>
