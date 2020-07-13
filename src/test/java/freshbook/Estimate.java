@@ -20,7 +20,7 @@ public class Estimate extends Base {
                 .given()
                 .contentType(ContentType.JSON)
                 .body(file)
-                .post("accounting/account/AQggqQ/estimates/estimates")
+                .post(estimateEndpoint)
                 .then()
                 .assertThat()
                 .statusCode(200)
@@ -34,11 +34,20 @@ public class Estimate extends Base {
                 .given()
                 .contentType(ContentType.JSON)
                 .body(updateEstimate)
-                .put("accounting/account/AQggqQ/estimates/estimates/"+estimateId)
+                .put(estimateEndpoint+"/"+estimateId)
                 .then()
                 .assertThat()
                 .statusCode(200);
+    }
 
-
+    @Test(priority = 3)
+    public void getEstimate() {
+        RestAssured
+                .given()
+                .get(estimateEndpoint+ "/"+estimateId)
+                .then()
+                .assertThat()
+                .statusCode(200);
     }
 }
+

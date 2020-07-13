@@ -7,6 +7,7 @@ public class Base {
 
     public static int id;
     public String endpoint = "timetracking/business/3585241/time_entries";
+    public String estimateEndpoint = "accounting/account/AQggqQ/estimates/estimates";
 
     @BeforeTest
     public void setup() {
