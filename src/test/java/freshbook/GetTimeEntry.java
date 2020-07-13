@@ -7,11 +7,13 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class GetTimeEntry extends Base {
 
+//    String endpoint = "timetracking/business/3585241/time_entries";
+
     @Test
     public void getAllTimeEntry() {
         RestAssured
                 .given()
-                .get()
+                .get(endpoint)
                 .then()
                 .assertThat()
                 .statusCode(200)
@@ -23,7 +25,7 @@ public class GetTimeEntry extends Base {
     public void getLatest() {
         RestAssured
                 .given()
-                .get(String.valueOf(id))
+                .get(endpoint+"/"+id)
                 .then()
                 .assertThat()
                 .statusCode(200);

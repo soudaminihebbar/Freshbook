@@ -6,17 +6,18 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class Update extends Base{
-    final File updateFile = new File("updateTimeEntry.json");
-//    String endpoint = "timetracking/business/3585241/time_entries";
+public class Estimate extends Base {
+
+    File file = new File("estimateData.json");
 
     @Test
-    public void update() {
+    public void singleEstimate() {
+
         RestAssured
                 .given()
                 .contentType(ContentType.JSON)
-                .body(updateFile)
-                .put(endpoint+"/"+id)
+                .body(file)
+                .post("accounting/account/AQggqQ/estimates/estimates")
                 .then()
                 .assertThat()
                 .statusCode(200);

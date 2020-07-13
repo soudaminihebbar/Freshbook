@@ -13,14 +13,13 @@ import static org.hamcrest.Matchers.greaterThan;
 public class CreateTimeEntry extends Base{
     final File file = new File("createTimeEntry.json");
 
-
     @Test
     public void createTimeEntry() {
         ExtractableResponse response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
                 .body(file)
-                .post()
+                .post(endpoint)
                 .then()
                 .assertThat()
                 .statusCode(200)

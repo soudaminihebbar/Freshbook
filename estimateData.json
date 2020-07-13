@@ -1,0 +1,42 @@
+{
+  "estimate": {
+    "email": "api.freshbooks@freshbooks.com",
+    "customerid": 126947,
+"create_date": "2019-04-20",
+"presentation": {
+"theme_primary_color": "#4f697a",
+"image_logo_src": "/service/uploads/images/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50IjoyMTAxMTkzLCJvcmlnaW5hbF9maWxlbmFtZSI6IkZyZXNoQm9va3MtTG9nbyAoMikucG5nIiwiYnVja2V0IjoidXBsb2FkcyIsImZpbGVuYW1lIjoidXBsb2FkLWEyY2QxMmFmZTc0MWQ1MGMwOGMyNmUyNDRhMmQzOWJkZTE2ZDY5OGMiLCJsZW5ndGgiOjg4MjQsImtleSI6Iidkb2NzLSctMjEwMTE5My91cGxvYWQtYTJjZDEyYWZlNzQxZDUwYzA4YzI2ZTI0NGEyZDM5YmRlMTZkNjk4YyJ9.vskvajegEwrVGx7v9qUZEmxWYvlwRjYqCUCKW0i7nds"
+},
+"lines": [
+{
+"type": 0,
+"description": "",
+"taxName1": "",
+"taxAmount1": 0,
+"name": "Paperwork",
+"qty": 1,
+"taxName2": "",
+"taxAmount2": 0,
+"unit_cost": {
+"amount": "5000.00",
+"code": "USD"
+}
+},
+{
+"type": 0,
+"description": "",
+"expenseid": 2652,
+"taxName1": "",
+"taxAmount1": 0,
+"name": "Air Canada",
+"qty": 1,
+"taxName2": "",
+"taxAmount2": 0,
+"unit_cost": {
+"amount": "3000.00",
+"code": "USD"
+}
+}
+]
+}
+}

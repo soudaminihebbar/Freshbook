@@ -6,10 +6,11 @@ import org.testng.annotations.BeforeTest;
 public class Base {
 
     public static int id;
+    public String endpoint = "timetracking/business/3585241/time_entries";
 
     @BeforeTest
     public void setup() {
-        RestAssured.baseURI = "https://api.freshbooks.com/timetracking/business/3585241/time_entries";
-        RestAssured.authentication = RestAssured.oauth2("a6e8afdb4d0ac8d2abd88bce92c3e3a266c3dc2897a24f343f8a8e046ad5421c");
+        RestAssured.baseURI = "https://api.freshbooks.com";
+        RestAssured.authentication = RestAssured.oauth2("9ee3aae95e1ebbc3252e16b5d0448816e06ae2e8fb9357ecb16adfbed986d0c1");
     }
 }
